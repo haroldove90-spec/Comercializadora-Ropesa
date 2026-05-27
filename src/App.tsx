@@ -241,30 +241,33 @@ export default function App() {
                     <div 
                       id="card-portal-admin"
                       onClick={() => handleProfileSwitch(uAdmin)}
-                      className="p-6 rounded-xl border border-gray-200 bg-white hover:border-red-600/50 hover:bg-gray-50/50 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-sm hover:shadow-md hover:-translate-y-1 transform duration-200"
+                      className="p-6 rounded-xl border border-gray-900 bg-gray-950 hover:border-red-600 hover:ring-2 hover:ring-red-600/10 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-lg hover:-translate-y-1 transform duration-200 overflow-hidden"
                     >
-                      <div>
+                      {/* Decorative red glow pattern */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-2xl pointer-events-none group-hover:bg-red-600/20 transition-all duration-300" />
+                      
+                      <div className="relative z-10">
                         <div className="flex items-center justify-between mb-4">
-                          <div className="p-3 bg-red-50 rounded-xl text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all">
+                          <div className="p-3 bg-red-600 rounded-xl text-white shadow-md group-hover:scale-110 transition-all">
                             <Users size={22} />
                           </div>
-                          <span className="text-[10px] bg-red-100 text-red-700 border border-red-200 px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
+                          <span className="text-[10px] bg-red-950 text-red-400 border border-red-900 px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
                             DIRECTORIO MASTER
                           </span>
                         </div>
-                        <h4 className="text-lg font-bold text-gray-900 font-display group-hover:text-red-600 transition-colors">
+                        <h4 className="text-lg font-bold text-white font-display group-hover:text-red-500 transition-colors">
                           Módulo Administrativo
                         </h4>
-                        <p className="text-xs text-gray-600 mt-2 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-gray-300 mt-2 leading-relaxed font-sans font-medium">
                           Control financiero completo. Audite márgenes de ganancia, costos unitarios confidenciales de proveedor, administre usuarios comerciales y visualice gráficas de desempeño global.
                         </p>
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <div className="text-[11px] text-gray-500">
-                          Operador: <span className="text-gray-800 font-bold">Laura Gómez</span>
+                      <div className="mt-6 pt-4 border-t border-gray-900 flex items-center justify-between relative z-10">
+                        <div className="text-[11px] text-gray-400">
+                          Operador: <span className="text-white font-bold">Laura Gómez</span>
                         </div>
-                        <span className="text-xs font-extrabold text-red-650 group-hover:translate-x-1.5 transform transition-transform flex items-center gap-1">
+                        <span className="text-xs font-extrabold text-red-500 group-hover:translate-x-1.5 transform transition-transform flex items-center gap-1">
                           Entrar Módulo →
                         </span>
                       </div>
@@ -279,28 +282,31 @@ export default function App() {
                     <div 
                       id="card-portal-ventas"
                       onClick={() => handleProfileSwitch(uVentas)}
-                      className="p-6 rounded-xl border border-gray-200 bg-white hover:border-red-600/50 hover:bg-gray-50/50 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-sm hover:shadow-md hover:-translate-y-1 transform duration-200"
+                      className="p-6 rounded-xl border border-red-200 bg-gradient-to-br from-red-50/20 via-white to-white hover:border-red-600 hover:ring-2 hover:ring-red-600/10 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-md hover:-translate-y-1 transform duration-200 overflow-hidden"
                     >
+                      {/* Decorative micro strip */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-red-600" />
+                      
                       <div>
                         <div className="flex items-center justify-between mb-4">
-                          <div className="p-3 bg-red-50 rounded-xl text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all">
+                          <div className="p-3 bg-red-100 rounded-xl text-red-605 group-hover:bg-red-600 group-hover:text-white transition-all shadow-sm">
                             <TrendingUp size={22} />
                           </div>
-                          <span className="text-[10px] bg-red-100 text-red-700 border border-red-200 px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
+                          <span className="text-[10px] bg-red-600 text-white px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
                             CRM & EMISIÓN
                           </span>
                         </div>
-                        <h4 className="text-lg font-bold text-gray-900 font-display group-hover:text-red-600 transition-colors">
+                        <h4 className="text-lg font-bold text-gray-955 font-display group-hover:text-red-600 transition-colors">
                           Módulo Ventas & CRM
                         </h4>
-                        <p className="text-xs text-gray-600 mt-2 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-gray-650 mt-2 leading-relaxed font-sans font-medium">
                           Gestione relaciones con clientes comerciales. Capture solicitudes, emita propuestas comerciales / cotizaciones automatizadas y autorice pedidos urgentes para el almacén.
                         </p>
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <div className="text-[11px] text-gray-500">
-                          Operador: <span className="text-gray-800 font-bold">Carlos Mendoza</span>
+                      <div className="mt-6 pt-4 border-t border-red-100 flex items-center justify-between">
+                        <div className="text-[11px] text-gray-600">
+                          Operador: <span className="text-red-700 font-bold">Carlos Mendoza</span>
                         </div>
                         <span className="text-xs font-extrabold text-red-650 group-hover:translate-x-1.5 transform transition-transform flex items-center gap-1">
                           Entrar Módulo →
@@ -318,30 +324,35 @@ export default function App() {
                     <div 
                       id="card-portal-almacen"
                       onClick={() => handleProfileSwitch(uAlmacen)}
-                      className="p-6 rounded-xl border border-gray-200 bg-white hover:border-red-600/50 hover:bg-gray-50/50 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-sm hover:shadow-md hover:-translate-y-1 transform duration-200"
+                      className="p-6 rounded-xl border border-red-100 bg-red-50/60 hover:bg-white hover:border-red-650 hover:ring-2 hover:ring-red-600/10 transition-all cursor-pointer relative group flex flex-col justify-between min-h-[250px] shadow-sm hover:shadow-md hover:-translate-y-1 transform duration-200 overflow-hidden"
                     >
+                      {/* Decorative border bottom alert bar */}
+                      {lowStockCount > 0 && (
+                        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-red-600 animate-pulse" />
+                      )}
+                      
                       <div>
                         <div className="flex items-center justify-between mb-4">
-                          <div className="p-3 bg-red-50 rounded-xl text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all">
+                          <div className="p-3 bg-white rounded-xl text-red-600 shadow-sm border border-red-100 group-hover:bg-red-600 group-hover:text-white transition-all">
                             <Package size={22} />
                           </div>
-                          <span className="text-[10px] bg-red-100 text-red-700 border border-red-200 px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
+                          <span className="text-[10px] bg-red-200/50 text-red-800 border border-red-300 px-2.5 py-1 rounded font-mono font-bold uppercase tracking-wider">
                             BODEGA & PACKING
                           </span>
                         </div>
-                        <h4 className="text-lg font-bold text-gray-900 font-display group-hover:text-red-600 transition-colors">
+                        <h4 className="text-lg font-bold text-red-950 font-display group-hover:text-red-700 transition-colors">
                           Módulo Almacén & Bodega
                         </h4>
-                        <p className="text-xs text-gray-600 mt-2 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-gray-700 mt-2 leading-relaxed font-sans font-medium">
                           Operación rápida de almacén físico. Complete surtidos de pedidos pendientes (picking y packing express), asigne guías electrónicas y realice auditoría / ajustes manuales de stock.
                         </p>
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <div className="text-[11px] text-gray-500 flex items-center gap-1.5">
-                          Operador: <span className="text-gray-800 font-bold">Miguel Rivas</span>
+                      <div className="mt-6 pt-4 border-t border-red-200/60 flex items-center justify-between">
+                        <div className="text-[11px] text-gray-600 flex items-center gap-1.5">
+                          Operador: <span className="text-gray-900 font-extrabold">Miguel Rivas</span>
                           {lowStockCount > 0 && (
-                            <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse" title="Alertas de Stock activas" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" title="Alertas de Stock activas" />
                           )}
                         </div>
                         <span className="text-xs font-extrabold text-red-650 group-hover:translate-x-1.5 transform transition-transform flex items-center gap-1">
@@ -355,39 +366,49 @@ export default function App() {
             </div>
 
             {/* Quick Birds-Eye Stats Panel */}
-            <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
-              <h4 className="text-xs uppercase font-extrabold tracking-wider font-mono text-gray-750 mb-4 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-black border border-gray-900 p-6 rounded-2xl shadow-xl text-white">
+              <h4 className="text-xs uppercase font-extrabold tracking-wider font-mono text-red-400 mb-4 flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" /> 
                 Métricas del Sistema Integradas en Tiempo Real
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="p-4 bg-gray-50 rounded-xl border border-gray-150">
-                  <span className="text-xs text-gray-500 block font-medium">Clientes Autorizados</span>
-                  <strong className="text-2xl font-extrabold text-red-650 font-display mt-1 block">
+                <div className="p-4 bg-red-950/40 rounded-xl border border-red-900/40 relative overflow-hidden group hover:border-red-600 transition-colors">
+                  <div className="absolute top-0 right-0 w-12 h-12 bg-red-600/10 rounded-full blur-lg" />
+                  <span className="text-xs text-red-300 block font-medium">Clientes Autorizados</span>
+                  <strong className="text-3xl font-extrabold text-red-500 font-display mt-1 block">
                     {customers.length}
                   </strong>
-                  <span className="text-[9px] text-gray-450 block mt-1 font-mono">Sincronizado con CRM</span>
+                  <span className="text-[9px] text-gray-400 block mt-1 font-mono">Sincronizado con CRM</span>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-xl border border-gray-150">
-                  <span className="text-xs text-gray-500 block font-medium">Catálogo SKU</span>
-                  <strong className="text-2xl font-extrabold text-gray-900 font-display mt-1 block">
+                
+                <div className="p-4 bg-gray-900/60 rounded-xl border border-gray-800/80 relative overflow-hidden hover:border-red-600/50 transition-colors">
+                  <span className="text-xs text-gray-400 block font-medium">Catálogo SKU</span>
+                  <strong className="text-3xl font-extrabold text-white font-display mt-1 block">
                     {products.length}
                   </strong>
-                  <span className="text-[9px] text-gray-450 block mt-1 font-mono">Productos listados</span>
+                  <span className="text-[9px] text-gray-500 block mt-1 font-mono">Productos listados</span>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-xl border border-gray-150">
-                  <span className="text-xs text-gray-500 block font-medium">Pedidos Registrados</span>
-                  <strong className="text-2xl font-extrabold text-black font-display mt-1 block">
+
+                <div className="p-4 bg-gray-900/60 rounded-xl border border-gray-800/80 relative overflow-hidden hover:border-red-600/50 transition-colors">
+                  <span className="text-xs text-gray-400 block font-medium">Pedidos Registrados</span>
+                  <strong className="text-3xl font-extrabold text-red-500 font-display mt-1 block">
                     {orders.length}
                   </strong>
-                  <span className="text-[9px] text-gray-450 block mt-1 font-mono">Operaciones de flujo</span>
+                  <span className="text-[9px] text-gray-500 block mt-1 font-mono">Operaciones de flujo</span>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-xl border border-gray-150">
-                  <span className="text-xs text-gray-500 block font-medium">Alertas Stock Mínimo</span>
-                  <strong className={`text-2xl font-extrabold font-display mt-1 block ${products.filter(p => p.stock <= p.minStock).length > 0 ? 'text-red-600' : 'text-gray-400'}`}>
+
+                <div className={`p-4 rounded-xl border transition-all duration-300 ${
+                  products.filter(p => p.stock <= p.minStock).length > 0 
+                  ? 'bg-red-600/20 border-red-500 text-rose-200' 
+                  : 'bg-gray-900/60 border-gray-800 text-gray-400'
+                }`}>
+                  <span className="text-xs block font-medium">Alertas Stock Mínimo</span>
+                  <strong className={`text-3xl font-extrabold font-display mt-1 block ${
+                    products.filter(p => p.stock <= p.minStock).length > 0 ? 'text-red-505 font-black text-rose-100 drop-shadow-[0_0_8px_rgba(239,68,68,0.3)] animate-pulse' : 'text-gray-400'
+                  }`}>
                     {products.filter(p => p.stock <= p.minStock).length}
                   </strong>
-                  <span className="text-[9px] text-gray-450 block mt-1 font-mono">Requieren reabastecimiento</span>
+                  <span className="text-[9px] block mt-1 font-mono text-gray-400">Requieren reabastecimiento</span>
                 </div>
               </div>
             </div>

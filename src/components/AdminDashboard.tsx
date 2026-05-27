@@ -417,60 +417,64 @@ export default function AdminDashboard({
         <div className="space-y-6">
           {/* Top Metrics Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div id="stat-sales" className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-start justify-between">
+            <div id="stat-sales" className="bg-gradient-to-br from-red-50/30 via-white to-white p-5 rounded-xl border border-red-150 shadow-sm flex items-start justify-between hover:shadow-md transition-all duration-200">
               <div>
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Ventas Mensuales</span>
-                <span className="text-2xl font-bold text-gray-900 block mt-1">
+                <span className="text-xs font-bold text-red-600 uppercase tracking-wider block">Ventas Mensuales</span>
+                <span className="text-2xl font-black text-gray-950 block mt-1">
                   ${totalSalesVolume.toLocaleString('es-MX', { minimumFractionDigits: 2 })}
                 </span>
-                <span className="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full inline-block mt-2 font-medium">
+                <span className="text-xs text-red-700 bg-red-100 px-2.5 py-0.5 rounded-full inline-block mt-2 font-black">
                   +14.2% vs mes anterior
                 </span>
               </div>
-              <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg">
+              <div className="p-3 bg-red-650 text-white rounded-lg shadow-sm">
                 <DollarSign size={20} />
               </div>
             </div>
 
-            <div id="stat-margin" className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-start justify-between">
+            <div id="stat-margin" className="bg-gradient-to-br from-gray-50 via-white to-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-start justify-between hover:shadow-md transition-all duration-200">
               <div>
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Margen Neto Operativo</span>
-                <span className="text-2xl font-bold text-gray-900 block mt-1">
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Margen Neto Operativo</span>
+                <span className="text-2xl font-black text-gray-900 block mt-1">
                   ${netProfit.toLocaleString('es-MX', { minimumFractionDigits: 2 })}
                 </span>
-                <span className="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full inline-block mt-2 font-medium">
+                <span className="text-xs text-black bg-gray-150 px-2.5 py-0.5 rounded-full inline-block mt-2 font-mono font-bold">
                   {netMarginPercent.toFixed(1)}% Margen Neto
                 </span>
               </div>
-              <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg">
+              <div className="p-3 bg-black text-white rounded-lg">
                 <Percent size={20} />
               </div>
             </div>
 
-            <div id="stat-active-customers" className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-start justify-between">
+            <div id="stat-active-customers" className="bg-gradient-to-br from-white to-red-50/10 p-5 rounded-xl border border-gray-200 shadow-sm flex items-start justify-between hover:shadow-md transition-all duration-200">
               <div>
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Clientes Registrados</span>
-                <span className="text-2xl font-bold text-gray-900 block mt-1">{customers.length}</span>
-                <span className="text-xs text-gray-500 inline-block mt-2">
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Clientes Registrados</span>
+                <span className="text-2xl font-black text-gray-950 block mt-1">{customers.length}</span>
+                <span className="text-xs text-red-600 font-bold inline-block mt-2">
                   100% activos comerciales
                 </span>
               </div>
-              <div className="p-3 bg-teal-50 text-teal-600 rounded-lg">
+              <div className="p-3 bg-red-50 text-red-600 border border-red-100 rounded-lg">
                 <Users size={20} />
               </div>
             </div>
 
-            <div id="stat-stock-alert" className={`bg-white p-5 rounded-xl border-2 shadow-sm flex items-start justify-between ${lowStockProducts.length > 0 ? 'border-amber-300 bg-amber-50/20' : 'border-gray-100'}`}>
+            <div id="stat-stock-alert" className={`p-5 rounded-xl border shadow-sm flex items-start justify-between transition-all duration-200 ${
+              lowStockProducts.length > 0 
+                ? 'border-red-300 bg-red-50/70 text-red-950 animate-pulse' 
+                : 'border-gray-200 bg-white'
+            }`}>
               <div>
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Alertas de Stock Bajo</span>
-                <span className={`text-2xl font-bold block mt-1 ${lowStockProducts.length > 0 ? 'text-amber-700' : 'text-gray-900'}`}>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Alertas de Stock Bajo</span>
+                <span className={`text-2xl font-black block mt-1 ${lowStockProducts.length > 0 ? 'text-red-700' : 'text-gray-900'}`}>
                   {lowStockProducts.length}
                 </span>
-                <span className={`text-xs inline-block mt-2 font-medium ${lowStockProducts.length > 0 ? 'text-amber-700' : 'text-gray-500'}`}>
-                  {lowStockProducts.length > 0 ? 'Requiere reabastecimiento' : 'Inventario óptimo'}
+                <span className={`text-xs inline-block mt-2 font-bold ${lowStockProducts.length > 0 ? 'text-red-905 uppercase tracking-wide' : 'text-gray-500'}`}>
+                  {lowStockProducts.length > 0 ? '⚠️ Reaperturar Surtido' : 'Inventario óptimo'}
                 </span>
               </div>
-              <div className={`p-3 rounded-lg ${lowStockProducts.length > 0 ? 'bg-amber-100 text-amber-700' : 'bg-gray-150 text-gray-500'}`}>
+              <div className={`p-3 rounded-lg ${lowStockProducts.length > 0 ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-550'}`}>
                 <AlertTriangle size={20} />
               </div>
             </div>
