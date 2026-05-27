@@ -1,5 +1,5 @@
 {
-  "name": "Dashboard ERP de Administración, Ventas e Inventario",
+  "name": "Comercializadora Ropesa",
   "description": "Panel de control integral para la gestión de usuarios, inventario, cotizaciones, pedidos y clientes con roles de Administrador, Ventas y Almacén.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
